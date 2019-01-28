@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +38,20 @@ export class MuzixHttpService {
     let savrtrack=this._http.post(this.muzixAppbackendUrl+'insertTrack',trackifo);
     console.log(trackifo);
     return savrtrack;
+  }
+
+  public getalltracks():any
+  {
+    let gettracks=this._http.get(this.muzixAppbackendUrl+'tracks');
+    console.log(gettracks);
+    return gettracks;
+  }
+
+  public deletetrack(trackid):any 
+  {
+    console.log("trackid:"+trackid);
+    console.log("url: "+this.muzixAppbackendUrl+'deleteTrack/'+trackid);
+    let response=this._http.delete(this.muzixAppbackendUrl+'deleteTrack/'+trackid);
+    return response;
   }
 }

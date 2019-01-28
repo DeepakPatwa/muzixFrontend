@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MuzixHttpService } from './muzix-http.service';
 import { WhishlistComponent } from './whishlist/whishlist.component';
+import { DeletetrackComponent } from './deletetrack/deletetrack.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WhishlistComponent } from './whishlist/whishlist.component';
     SavetrackComponent,
     SearchtrackComponent,
     UpdatetrackComponent,
-    WhishlistComponent
+    WhishlistComponent,
+    DeletetrackComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,9 @@ import { WhishlistComponent } from './whishlist/whishlist.component';
     RouterModule.forRoot([
       {path:'search', component:SearchtrackComponent},
       {path:'searchtrack/:trackname',component:LastfmComponent},
-      {path:'savetrack/:mbid',component:SavetrackComponent}
+      {path:'savetrack/:mbid',component:SavetrackComponent},
+      {path:'myplaylist', component:WhishlistComponent},
+      {path: 'deletetrack/:mbid', component:DeletetrackComponent}
       
     ])
   ],
