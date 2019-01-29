@@ -54,4 +54,13 @@ export class MuzixHttpService {
     let response=this._http.delete(this.muzixAppbackendUrl+'deleteTrack/'+trackid);
     return response;
   }
+
+  public updateTrack(id, comment):any
+  {
+    console.log("comment: "+comment);
+    console.log("id: "+id);
+    console.log("url:" +this._http.put(this.muzixAppbackendUrl+'updateTrack/'+id+'/'+comment, comment));
+    let response=this._http.put(this.muzixAppbackendUrl+'updateTrack/'+id+'/'+comment, 0);
+    return response;
+  }
 }

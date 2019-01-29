@@ -8,13 +8,14 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">{{blog.name| uppercase}}</div>
-        <div class="panel-body">  
+        <img class="card-img-top" src='{{blog.imgurl}}' alt="Card image cap">
+        <div class="panel-body" type="text-box">  
 
-          <p>{{blog.comment}}</p>
-          <p>go: {{blog.id}}</p>
+          <p><input type="text" [(ngModel)]="blog.comment"></p>
         </div>
-        <div class="panel-footer">Listners: {{blog.listeners}}<br /> 
-          <br /><br /><a [routerLink]="['/deletetrack',blog.id]" class="btn btn-primary">Delete</a>
+        <div class="panel-footer">
+          <a [routerLink]="['/updatetrack',blog.id,blog.comment]" class="btn btn-info">Update</a>
+          <a [routerLink]="['/deletetrack',blog.id]" class="btn btn-primary">Delete</a>        <!--<a [routerLink]="['/updatetrack',blog.id,blog.comment]" class="btn btn-primary">Update</a> -->
 
         </div>
 

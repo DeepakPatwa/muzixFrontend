@@ -36,7 +36,8 @@ import { DeletetrackComponent } from './deletetrack/deletetrack.component';
       {path:'searchtrack/:trackname',component:LastfmComponent},
       {path:'savetrack/:mbid',component:SavetrackComponent},
       {path:'myplaylist', component:WhishlistComponent},
-      {path: 'deletetrack/:mbid', component:DeletetrackComponent}
+      {path: 'deletetrack/:mbid', component:DeletetrackComponent},
+      {path: 'updatetrack/:mbid/:comment', component:UpdatetrackComponent}
       
     ])
   ],
