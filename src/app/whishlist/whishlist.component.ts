@@ -13,7 +13,7 @@ export class WhishlistComponent implements OnInit {
   constructor(public _route: ActivatedRoute, private router: Router, public muzixservice:MuzixHttpService) { }
 
   ngOnInit() {
-
+    
     this.alltracks=this.muzixservice.getalltracks().subscribe(
       data => {
         this.alltracks = data;

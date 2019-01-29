@@ -59,8 +59,9 @@ export class MuzixHttpService {
   {
     console.log("comment: "+comment);
     console.log("id: "+id);
-    console.log("url:" +this._http.put(this.muzixAppbackendUrl+'updateTrack/'+id+'/'+comment, comment));
+    // console.log("url:" +this._http.put(this.muzixAppbackendUrl+'updateTrack/'+id+'/'+comment, comment));
     let response=this._http.put(this.muzixAppbackendUrl+'updateTrack/'+id+'/'+comment, 0);
+    console.log('res: ' + response);
     return response;
   }
 }

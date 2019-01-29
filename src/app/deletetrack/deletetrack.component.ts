@@ -17,7 +17,13 @@ export class DeletetrackComponent implements OnInit {
 
     this.mbid1 = this._route.snapshot.paramMap.get('mbid');
     console.log("meid:"+this.mbid1);
-    this.muzixservice.deletetrack(this.mbid1).subscribe();
+    this.muzixservice.deletetrack(this.mbid1).subscribe(
+            data => {
+        this.alltracks = data;
+        console.log("in deleteComp");
+        this.router.navigate(['/myplaylist']);
+      }
+    );
     // this.alltracks=this.muzixservice.getalltracks().subscribe(
     //   data => {
     //     this.alltracks = data;

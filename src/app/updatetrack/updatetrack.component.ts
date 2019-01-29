@@ -18,9 +18,11 @@ export class UpdatetrackComponent implements OnInit {
     this.mid1 = this._route.snapshot.paramMap.get('mbid');
   this.comments = this._route.snapshot.paramMap.get('comment');
   console.log("updatecom " + this.mid1 + ' ' + this.comments);
-  this.updatedtracks=this.muzixservice.updateTrack(this.mid1, this.comments).subscribe(
+  this.muzixservice.updateTrack(this.mid1, this.comments).subscribe(
     data => {
       this.updatedtracks = data;
+      console.log("inData: ");
+      this.router.navigate(['/myplaylist']);
     },
     error => {
       console.log('some error occured in Update Track');
