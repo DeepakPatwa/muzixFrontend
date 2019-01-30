@@ -1,8 +1,19 @@
-<form #createForm="ngForm" (ngSubmit)="search()">
+<!-- <form #createForm="ngForm" (ngSubmit)="search()">
   <div class="input-group mb-3">
     <input type="text" class="form-control" name="trackname" [(ngModel)]="trackname" placeholder="Track Name" aria-label="Recipient's username" aria-describedby="button-addon2">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
     </div>
   </div>
-</form>
+</form> -->
+
+
+<form class="form-inline my-2 my-lg-0 hello" #createForm="ngForm" (ngSubmit)="search()">
+    <!-- <div class="input-group mb-3"> -->
+  <input type="text" class="form-control mr-sm-2" name="trackname" [(ngModel)]="trackname" placeholder="Track Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <!-- <div class="input-group-append"> -->
+ 
+      <!-- </div> -->
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="button-addon2" onClick= "window.location.reload();">Search </button>
+    <!-- </div> -->
+   </form>
